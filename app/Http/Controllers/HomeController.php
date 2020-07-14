@@ -124,9 +124,9 @@ class HomeController extends Controller
     public function bookview($id)
     {
         //return "hello".$id;
-        // $book = Book::find($id);
-        $book =Book::where('book_id',$id) -> first();
-        return view('bookview')->with('book',$book);
+       // $book = Book::find($id);
+       $book =Book::where('book_id',$id) -> first();
+       return view('bookview')->with('book',$book);
     }
     public function article1()
     {
@@ -192,9 +192,9 @@ class HomeController extends Controller
     {
         return view('profilehelp');
     }
-    public function Mybooklisthelp()
+    public function Searchbooks()
     {
-        return view('Mybooklisthelp');
+        return view('Searchbooks');
     }
     public function helpbooks()
     {
@@ -214,7 +214,9 @@ class HomeController extends Controller
     }
     public function Author()
     {
+        //$authors= Author::orderBy('id');
         return view('Author');
+        //->with('authors',$authors);
     }
 
     public function runScript(){

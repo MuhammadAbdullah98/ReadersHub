@@ -10,8 +10,7 @@
                     <div class="top-banner">
                         <h1>Privacy Policy</h1>
                         <nav class="breadcrumb">
-                          {{--  <a class="breadcrumb-item" href="index.html">Home</a>
-                          <span class="breadcrumb-item active">About us</span>  --}}
+
                         </nav>
                     </div>
                 </div>

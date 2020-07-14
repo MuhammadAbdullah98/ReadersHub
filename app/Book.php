@@ -3,9 +3,28 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+// use Laravel\Scout\Searchable;
 
 class Book extends Model
+
 {
+
+    // use Searchable;
+
+
+    // public function searchableAs()
+    // {
+    //     return 'original_title';
+    // }
+
+    // public function toSearchableArray()
+    // {
+    //     $array = $this->toArray();
+
+    //     // Customize array...
+
+    //     return $array;
+    // }
     protected $primarykey='id';
     protected $fillable =
     [

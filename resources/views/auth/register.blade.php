@@ -43,34 +43,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            {{--  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{url('home')}}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('recommendations')}}">Recommendations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('recommendations')}}">Browse Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('category')}}">Updates</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('contactus')}}">Contact Us</a>
-                </li>
-                {{--  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cato</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>  --}}
-            {{--  </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>  --}}
+
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -208,7 +181,7 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary" style="border-radius: 7rem">
+                                        <button type="submit" class="btn btn-primary" style="border-radius: 0.35rem; width:40%">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
