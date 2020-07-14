@@ -1,6 +1,7 @@
 {{--  @extends('layouts.app')
 
 @section('content')  --}}
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +14,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/main.min.js')}}"></script>
-	<script src="{{asset('js/script1.js')}}"></script>
+    <script src="{{asset('js/script1.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -38,40 +39,12 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="">
         <a class="navbar-brand" href="{{url('books')}}">ReadersHub</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-            data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            {{--  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{url('home')}}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('recommendations')}}">Recommendations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('recommendations')}}">Browse Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('category')}}">Updates</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('contactus')}}">Contact Us</a>
-                </li>
-                {{--  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cato</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>  --}}
-            {{--  </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>  --}}
+
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -92,7 +65,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
                         style="background-color:grey;">
-                        <a class="dropdown-item" href="{{ url('viewprofile') }}" >
+                        <a class="dropdown-item" href="{{ url('viewprofile') }}">
                             View
 
                         </a>
@@ -131,119 +104,128 @@
 </div>
 
 <div class="theme-layout">
-	<div class="container-fluid pdng0" style="padding-left: 0px; padding-right:0px;">
-		<div class="row merged">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<div class="land-featurearea" style="background-color: #1d5c53">
-					<div class="land-meta">
+    <div class="container-fluid pdng0" style="padding-left: 0px; padding-right:0px;">
+        <div class="row merged">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="land-featurearea" style="background-color: #1d5c53">
+                    <div class="land-meta">
                         <h1 style="margin-bottom: 10rem">ReadersHub</h1>
                         <p>Get your best recommended books of best author's.</p>
-						{{-- <div class="friend-logo">
+                        {{-- <div class="friend-logo">
 							<span><img src="images/wink.png" alt=""></span>
 						</div> --}}
 
-					</div>
-				</div>
+                    </div>
+                </div>
             </div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<div class="login-reg-bg">
-					<div class="log-reg-area sign">
-						<h2 class="log-title">Login</h2>
-							<p>
-								Don’t use ReadersHub? <a href="{{url('help')}}" title="">Take the tour</a> or <a href="{{ route('register') }}" title="">Register now</a>
-                            </p>
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="login-reg-bg">
+                    <div class="log-reg-area sign">
+                        <h2 class="log-title">Login</h2>
+                        <p>
+                            Don’t use ReadersHub? <a href="{{url('help')}}" title="">Take the tour</a> or <a
+                                href="{{ route('register') }}" title="">Register now</a>
+                        </p>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
 
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email address') }}</label>
+                            <div class="form-group row">
+                                <label for="email"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Email address') }}</label>
 
-                                    <div class="col-md-6" >
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus  style="border-width: 1px">
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus
+                                        style="border-width: 1px">
 
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="form-group row">
+                                <label for="password"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password"
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        required autocomplete="current-password" style="border-width: 1px">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-group row">
+                                <div class="col-md-4 offset-md-4" style = "align-self:center; ">
+                                    <div class="form-check" style = "font-size:11pt; ">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                            {{ old('remember') ? 'checked' : '' }} style="margin-top: -0.2rem">
+
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  style="border-width: 1px" >
-
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-
-
-                                <div class="form-group row">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} style="margin-top: -0.2rem">
-
-                                            <label class="form-check-label" for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary" style="border-radius: 7rem">
-                                            {{ __('Login') }}
-                                        </button>
-                                    </div>
-                                </div>
-
-
+                                <div class="col-md-3" >
+                                    <div class="form-check">
                                         @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}" style="text-align: right">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
+                                        <a class="btn btn-link" href="{{ route('password.request') }}"
+                                            style="text-align: right; font-size: 11pt; ">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
                                         @endif
                                     </div>
                                 </div>
-                            </form>
+                            </div>
 
-					</div>
 
-				</div>
-			</div>
-		</div>
-	</div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary" style="border-radius: 0.35rem; width:40%">
+                                        {{ __('Login') }}
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                    </div>
+                </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
 </div>
 <section id="footer">
     <div class="container">
@@ -264,7 +246,8 @@
                 <ul class="list-unstyled quick-links">
                     <li><a href="{{url('recommendations')}}"><i class="fa fa-angle-double-right"></i>Recommendations</a>
                     </li>
-                    <li><a href="{{url('Popular Articles')}}"><i class="fa fa-angle-double-right"></i>Popular Articles</a>
+                    <li><a href="{{url('Popular Articles')}}"><i class="fa fa-angle-double-right"></i>Popular
+                            Articles</a>
                     </li>
                     <li><a href="{{url('Blogs')}}"><i class="fa fa-angle-double-right"></i>ReadersHub Blog</a>
                     </li>
@@ -277,9 +260,11 @@
                 <ul class="list-unstyled quick-links">
                     <li><a href="{{url('Authordetails')}}"><i class="fa fa-angle-double-right"></i>About Authors</a>
                     </li>
-                    <li><a href="{{url('Publisher details')}}"><i class="fa fa-angle-double-right"></i>About Publishers</a>
+                    <li><a href="{{url('Publisher details')}}"><i class="fa fa-angle-double-right"></i>About
+                            Publishers</a>
                     </li>
-                    <li><a href="{{url('RecommendedAuthors')}}"><i class="fa fa-angle-double-right"></i>Recommended</a></li>
+                    <li><a href="{{url('RecommendedAuthors')}}"><i class="fa fa-angle-double-right"></i>Recommended</a>
+                    </li>
                     <li><a href="{{url('help')}}"><i class="fa fa-angle-double-right"></i>Help</a></li>
                     <li><a href="{{url('help')}}" title="Design and developed by"><i
                                 class="fa fa-angle-double-right"></i>FAQ</a></li>
@@ -311,13 +296,3 @@
     </div>
 </section>
 <!-- ./Footer -->
-
-
-
-
-
-
-
-
-
-

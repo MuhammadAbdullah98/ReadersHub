@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/main.min.js')}}"></script>
-	<script src="{{asset('js/script1.js')}}"></script>
+    <script src="{{asset('js/script1.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,6 +31,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -51,7 +52,7 @@
                         <a class="nav-link" href="{{url('books')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('recommendations')}}">Recommendations</a>
+                        <a class="nav-link" href="{{ url("http://localhost:5000/search_book?search_field=Hunger+games") }}">Recommendations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('books')}}">Browse Books</a>
@@ -61,13 +62,14 @@
                         <a class="nav-link" href="{{url('contactus')}}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('Author')}}">Author's</a>
+                        <a class="nav-link" href="{{url('Author')}}">Authors</a>
                     </li>
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0" action="{{ url("http://localhost:5000/search_book") }}"
+                    method="get">
+                    <input class="form-control mr-sm-2" type="text" name="search_field" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id='submit' type="submit">Search</button>
                 </form>
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
@@ -84,34 +86,28 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->name }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
                             style="background-color:grey;">
-                            <a class="dropdown-item" href="{{ url('books') }}" >
+                            <a class="dropdown-item" href="{{ url('books') }}">
                                 Home
 
                             </a>
-                            <a class="dropdown-item" href="{{ url('viewprofile') }}" >
+                            <a class="dropdown-item" href="{{ url('viewprofile') }}">
                                 View Profile
 
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('My Booklist') }}
+                            <a class="dropdown-item" href="{{ url('Author') }}">
+                                My Authors
 
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                {{ __('My Authors') }}
+                            <a class="dropdown-item" href="{{ url('support') }}">
+                                Help
 
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Help') }}
 
-                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
        document.getElementById('logout-form').submit();">
                                 {{ __('Signout') }}
@@ -134,7 +130,7 @@
 
 
     {{-- <main class="py-4"> --}}
-        @yield('content')
+    @yield('content')
     {{-- </main> --}}
 
     </div>
@@ -158,9 +154,11 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <h5>Books</h5>
                     <ul class="list-unstyled quick-links">
-                        <li><a href="{{url('recommendations')}}"><i class="fa fa-angle-double-right"></i>Recommendations</a>
+                        <li><a href="{{ url("http://localhost:5000/search_book?search_field=Hunger+games") }}"><i
+                                    class="fa fa-angle-double-right"></i>Recommendations</a>
                         </li>
-                        <li><a href="{{url('PopularArticles')}}"><i class="fa fa-angle-double-right"></i>Popular Articles</a>
+                        <li><a href="{{url('PopularArticles')}}"><i class="fa fa-angle-double-right"></i>Popular
+                                Articles</a>
                         </li>
                         <li><a href="{{url('Blogs')}}"><i class="fa fa-angle-double-right"></i>ReadersHub Blog</a>
                         </li>
@@ -173,9 +171,11 @@
                     <ul class="list-unstyled quick-links">
                         <li><a href="{{url('Authordetails')}}"><i class="fa fa-angle-double-right"></i>About Authors</a>
                         </li>
-                        <li><a href="{{url('Publisherdetails')}}"><i class="fa fa-angle-double-right"></i>About Publishers</a>
+                        <li><a href="{{url('Publisherdetails')}}"><i class="fa fa-angle-double-right"></i>About
+                                Publishers</a>
                         </li>
-                        <li><a href="{{url('RecommendedAuthors')}}"><i class="fa fa-angle-double-right"></i>Recommended</a></li>
+                        <li><a href="{{url('RecommendedAuthors')}}"><i
+                                    class="fa fa-angle-double-right"></i>Recommended</a></li>
                         <li><a href="{{url('support')}}"><i class="fa fa-angle-double-right"></i>Help</a></li>
                         <li><a href="{{url('support')}}" title="Design and developed by"><i
                                     class="fa fa-angle-double-right"></i>FAQ</a></li>

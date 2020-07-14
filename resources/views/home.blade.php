@@ -2,6 +2,9 @@
 
 @section('content')
 
+
+
+
 <div class="col-12 px-0">
     <h1 style="text-align: center; padding:3%;">New Suggestions</h1>
 

@@ -162,6 +162,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+
 
         /*
          * Package Service Providers...

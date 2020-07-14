@@ -3,7 +3,7 @@
 @section('content')
 <section style="display: content; padding:0;">
     <div class="feature-photo">
-        <figure><img src="images/timeline-1.jpg" alt=""></figure>
+        <figure><img src="images/Readingabook_1366x350.jpg" alt=""></figure>
         <div class="add-btn">
 
         </div>
@@ -38,9 +38,8 @@
                                 <span>{{$user->email}}</span>
                             </li>
                             <li>
-                                <a class="active" href="time-line.html" title="" data-ripple="">About</a>
-                                <a class="" href="timeline-photos.html" title="" data-ripple="">Following</a>
-                                <a class="" href="timeline-videos.html" title="" data-ripple="">Followers</a>
+                                <a class="active"  title="" data-ripple="">About</a>
+
 
                             </li>
                         </ul>

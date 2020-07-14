@@ -54,9 +54,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    {{-- <figure class="about-picture">
-                        <img src="images/mockup2_540x385.jpg" alt="">
-                    </figure> --}}
+
                 </div>
             </div>
         </div>

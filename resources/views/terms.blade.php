@@ -1,7 +1,3 @@
-
-
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,8 +43,7 @@
                     <div class="top-banner">
                         <h1>Terms&Conditions</h1>
                         <nav class="breadcrumb">
-                          {{--  <a class="breadcrumb-item" href="index.html">Home</a>
-                          <span class="breadcrumb-item active">About us</span>  --}}
+
                         </nav>
                     </div>
                 </div>
@@ -113,9 +108,7 @@ a statement that the information in the notification is accurate, and under pena
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    {{-- <figure class="about-picture">
-                        <img src="images/mockup2_540x385.jpg" alt="">
-                    </figure> --}}
+
                 </div>
             </div>
         </div>

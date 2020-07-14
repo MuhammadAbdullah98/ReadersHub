@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified']], function () {
@@ -50,7 +53,13 @@ Route::group(['middleware' => ['verified']], function () {
 
 
     Route::post('/books',['as' => 'admin.importbook','uses'=> 'BookCsv@bookCsvImport']);
+    Route::post('/authors',['as' => 'admin.importauthors','uses'=> 'AuthorCsv@AuthorCsvImport']);
     Route::post('/script',['as' => 'script.run','uses'=> 'BookCsv@script']);
+
+
+    Route::get('/live_search', 'LiveSearch@index');
+Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+
 });
 
 
@@ -85,10 +94,13 @@ Route::get('wishlisthelp', 'HomeController@wishlisthelp')->name('wishlisthelp');
 Route::get('recommendedauthorshelp', 'HomeController@recommendedauthorshelp')->name('recommendedauthorshelp');
 Route::get('publisherhelp', 'HomeController@publisherhelp')->name('publisherhelp');
 Route::get('profilehelp', 'HomeController@profilehelp')->name('profilehelp');
-Route::get('Mybooklisthelp', 'HomeController@Mybooklisthelp')->name('Mybooklisthelp');
+Route::get('Searchbooks', 'HomeController@Searchbooks')->name('Searchbooks');
 Route::get('helpbooks', 'HomeController@helpbooks')->name('helpbooks');
 Route::get('HelpAuthors', 'HomeController@HelpAuthors')->name('HelpAuthors');
 Route::get('helprecommendedbooks', 'HomeController@helprecommendedbooks')->name('helprecommendedbooks');
 Route::get('Forgotpasswordhelp', 'HomeController@Forgotpasswordhelp')->name('Forgotpasswordhelp');
+
+
+
 
 

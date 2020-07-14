@@ -57,11 +57,7 @@
     </script>
 </head>
 
-{{--  <form action="{{route ('admin.importbook')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="file" accept=".csv">
-                        <button class="btn btn-success">Import Book Data</button>
-                        </form> --}}
+
 
 <body>
     <div id="app">
@@ -89,7 +85,7 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->name }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
@@ -470,8 +466,9 @@
                         </li>
                         <li><a href="{{url('RecommendedAuthors')}}"><i class="fa fa-angle-double-right"></i>Recommended</a></li>
                         <li><a href="{{url('help')}}"><i class="fa fa-angle-double-right"></i>Help</a></li>
-                        <li><a href="{{url('help')}}" title="Design and developed by"><i
-                                    class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="{{url('help')}}" title="">
+                            <i class="fa fa-angle-double-right"></i>FAQ</a></li>
+
                     </ul>
                 </div>
             </div>
